@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background-color: #004980;
+}
+
+@import url(fonts.css);
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #C2F5FF;
+    width: 480px;
+    height: 459px;
+    top: 158px;
+    left: 272px;
+    border-radius: 12px;
+    
+}
+
+.container-title {
+    color: #004980;
+    font-family: StratosSkyeng;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.container-levels {
+    display: flex;
+    gap: 10px; 
+}
+
+.container-item {
+    background-color: white;
+    border: white;
+    width: 98px;
+    height: 98px;
+    top: 354px;
+    left: 341px;
+    border-radius: 12px;
+    color: #0080C1;
+    font-family: StratosSkyeng;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.container-button {
+    margin-top: 40px;
+    width: 246px;
+    height: 50px;
+    background-color: #7AC100;
+    border:#7AC100;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+}
