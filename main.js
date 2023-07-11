@@ -7,10 +7,16 @@ let selectedLevel;
 
 
 startButton.addEventListener('click', () => {
+    let isChecked = false;
     for(const containerLevel of containerLevels) {
         if(containerLevel.checked === true) {
+            isChecked = true;
             selectedLevel = containerLevel.value; 
         }
+    }
+    if(!isChecked) {
+        alert('Выберите уровень');
+        return;
     }
 
     GamePageRender(selectedLevel);
@@ -25,3 +31,4 @@ const GamePageRender = (level) => {
 
     container.innerHTML = gamePageHtml;
 }
+console.log(containerLevels);
