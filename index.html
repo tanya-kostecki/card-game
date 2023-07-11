@@ -12,12 +12,16 @@
         <div class="container-content">
             <h1 class="container-title">Выбери сложность</h1>
             <div class="container-levels">
-                <button class="container-item">1</button>
-                <button class="container-item">2</button>
-                <button class="container-item">3</button>
+                <input type="radio" id="basic" class="container-level" name="levels" value="1"></input>
+                <label class="radio-label" for="basic">1</label>
+                <input type="radio" id="middle" class="container-level" name="levels" value="2"></input>
+                <label class="radio-label" for="middle">2</label>
+                <input type="radio" id="advanced" class="container-level" name="levels" value="3"></input>
+                <label class="radio-label" for="advanced">3</label>
             </div>
-            <button class="container-button">Старт</button>
+            <button class="start-button">Старт</button>
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
