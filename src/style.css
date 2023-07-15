@@ -1,8 +1,9 @@
-@import url(/src/fonts.css);
+@import url('/src/fonts.css');
 
 body {
     margin: 0;
     background-color: #004980;
+    font-family: StratosSkyeng;
 }
 
 .container {
@@ -28,7 +29,6 @@ body {
 
 .container-title {
     color: #004980;
-    font-family: StratosSkyeng;
     font-size: 40px;
     font-weight: 400;
     text-align: center;
@@ -55,11 +55,9 @@ input {
     left: 341px;
     border-radius: 12px;
     color: #0080c1;
-    font-family: StratosSkyeng;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;
-    letter-spacing: 0px;
     box-sizing: border-box;
 }
 
@@ -74,11 +72,9 @@ input {
     background-color: #7ac100;
     border: #7ac100;
     border-radius: 12px;
-    font-family: StratosSkyeng;
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
-    letter-spacing: 0em;
     text-align: center;
     color: white;
 }
@@ -93,7 +89,6 @@ input {
 
 .timer {
     color: white;
-    font-family: StratosSkyeng;
     display: flex;
 }
 
@@ -112,11 +107,9 @@ input {
     background-color: #7ac100;
     border: #7ac100;
     border-radius: 12px;
-    font-family: StratosSkyeng;
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
-    letter-spacing: 0em;
     text-align: center;
     color: white;
 }
