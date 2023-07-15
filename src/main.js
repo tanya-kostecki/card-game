@@ -31,39 +31,3 @@ const GamePageRender = (level) => {
     container.innerHTML = gamePageHtml
 }
 console.log(containerLevels)
-
-// let numberOfCards;
-// const getNumberOfCards = () => {
-//     if(selectedLevel === 1) {
-//         numberOfCards = 6;
-//     }
-//     if(selectedLevel === 2) {
-//         numberOfCards === 12;
-//     }
-//     if(selectedLevel === 3) {
-//         numberOfCards = 18;
-//     }
-// }
-
-// const body = document.querySelector('body')
-// const GamePageRender = (level) => {
-//     body.innerHTML = ``
-//     let gamePageHtml = `
-//        <div class="game-page-container">
-//             <div class="timer">
-//                 <div class="time">
-//                     <span class="timer-number">00.</span>
-//                     <span>min</span>
-//                 </div>
-//                 <div class="time">
-//                     <span class="timer-number">00</span>
-//                     <span>sec</span>
-//                 </div>
-//             </div>
-//             <div class="button">
-//                 <button class="restart-button">Начать заново</button>
-//             </div>
-//        </div>`
-
-//     body.innerHTML = gamePageHtml
-// }
