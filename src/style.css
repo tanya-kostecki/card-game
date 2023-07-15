@@ -1,9 +1,9 @@
+@import url(/src/fonts.css);
+
 body {
     margin: 0;
     background-color: #004980;
 }
-
-@import url(fonts.css);
 
 .container {
     display: flex;
@@ -18,13 +18,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #C2F5FF;
+    background-color: #c2f5ff;
     width: 480px;
     height: 459px;
     top: 158px;
     left: 272px;
     border-radius: 12px;
-    
 }
 
 .container-title {
@@ -32,14 +31,12 @@ body {
     font-family: StratosSkyeng;
     font-size: 40px;
     font-weight: 400;
-    line-height: 48px;
-    letter-spacing: 0em;
     text-align: center;
 }
 
 .container-levels {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
 }
 
 input {
@@ -57,26 +54,25 @@ input {
     top: 354px;
     left: 341px;
     border-radius: 12px;
-    color: #0080C1;
+    color: #0080c1;
     font-family: StratosSkyeng;
     font-size: 64px;
     font-weight: 400;
     line-height: 72px;
     letter-spacing: 0px;
-    text-align: center;
     box-sizing: border-box;
 }
 
 .container-level:checked + label {
-    color: #7AC100;
- }
+    color: #7ac100;
+}
 
 .start-button {
     margin-top: 40px;
     width: 246px;
     height: 50px;
-    background-color: #7AC100;
-    border:#7AC100;
+    background-color: #7ac100;
+    border: #7ac100;
     border-radius: 12px;
     font-family: StratosSkyeng;
     font-size: 24px;
@@ -85,4 +81,67 @@ input {
     letter-spacing: 0em;
     text-align: center;
     color: white;
+}
+
+/* Game page */
+.game-page-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.timer {
+    color: white;
+    font-family: StratosSkyeng;
+    display: flex;
+}
+
+.timer-number {
+    font-size: 64px;
+}
+
+.time {
+    display: flex;
+    height: 91px;
+}
+
+.restart-button {
+    width: 246px;
+    height: 50px;
+    background-color: #7ac100;
+    border: #7ac100;
+    border-radius: 12px;
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+}
+
+/* Game page 2 & 3 */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-space {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: center;
+    align-items: center;
+    max-width: 975px;
+}
+
+.game-card {
+    width: 95px;
+    height: 133px;
+    border-radius: 4px;
 }
