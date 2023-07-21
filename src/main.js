@@ -1,3 +1,6 @@
+// import './src/style.css'
+// import './src/fonts.css'
+
 //const container = document.querySelector('.container')
 
 const startButton = document.querySelector('.start-button')
@@ -65,7 +68,7 @@ const GamePageRender = (numberOfPairs) => {
         const randomCardRanks = Math.floor(Math.random() * cardRanks.length)
 
         let cardElement =
-            '../img/images/' +
+            '../static/images/' +
             cardRanks[randomCardRanks] +
             cardSuits[randomCardSuits] +
             '.jpg'
@@ -85,12 +88,11 @@ const GamePageRender = (numberOfPairs) => {
     const gameCards = document.querySelectorAll('.game-card')
     const hideGameCards = () => {
         for (const gameCard of gameCards) {
-            gameCard.src = '../img/background/background.jpg'
+            gameCard.src = '../static/images/background.jpg'
         }
     }
     setTimeout(hideGameCards, 5000)
 
-    //Клик на рубашку карточки
     const compareGameCards = (gameCards, setOfCards) => {
         let clickedCards = []
         let matchCounter = 0
