@@ -1,6 +1,3 @@
-// import './src/style.css'
-// import './src/fonts.css'
-
 //const container = document.querySelector('.container')
 
 const startButton = document.querySelector('.start-button')
