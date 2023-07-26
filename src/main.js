@@ -1,4 +1,5 @@
 //const container = document.querySelector('.container')
+// import { compareGameCards } from './cards.js'
 
 const startButton = document.querySelector('.start-button')
 const containerLevels = document.querySelectorAll('.container-level')
@@ -36,16 +37,17 @@ const cardSuits = ['Diamonds', 'Clubs', 'Spades', 'Hearts']
 const cardRanks = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
 
 const body = document.querySelector('body')
+
 const GamePageRender = (numberOfPairs) => {
     body.innerHTML = `
         <div class="game-page-container">
             <div class="timer">
                 <div class="time">
-                    <span class="timer-number">00.</span>
+                    <span class="timer-number minutes">00.</span>
                     <span>min</span>
                 </div>
                 <div class="time">
-                    <span class="timer-number">00</span>
+                    <span class="timer-number seconds">00</span>
                     <span>sec</span>
                 </div>
             </div>
@@ -56,6 +58,33 @@ const GamePageRender = (numberOfPairs) => {
         <div class="game-container">
             <div class="game-space"></div>
         </div>`
+
+    //Таймер
+    const minutesElement = document.querySelector('.minutes')
+    const secondsElement = document.querySelector('.seconds')
+
+    let minutes = 0
+    let seconds = 0
+    let interval
+
+    clearInterval(interval)
+    interval = setInterval(startTimer, 1000)
+
+    function startTimer() {
+        seconds++
+        if (seconds <= 9) {
+            secondsElement.textContent = '0' + seconds
+        }
+        if (seconds > 9) {
+            secondsElement.textContent = seconds
+        }
+        if (seconds > 60) {
+            minutes++
+            minutesElement.textContent = '0' + minutes
+            seconds = 0
+            secondsElement.textContent = '0' + seconds
+        }
+    }
 
     let setOfCards = []
 
@@ -71,7 +100,7 @@ const GamePageRender = (numberOfPairs) => {
             '.jpg'
 
         setOfCards.push(cardElement, cardElement)
-        console.log(setOfCards)
+        // console.log(setOfCards)
     }
 
     const shuffledSetOfCards = setOfCards.sort(() => Math.random() - 0.5)
@@ -93,10 +122,13 @@ const GamePageRender = (numberOfPairs) => {
     const compareGameCards = (gameCards, setOfCards) => {
         let clickedCards = []
         let matchCounter = 0
+        const body = document.querySelector('body')
+
         for (let i = 0; i < gameCards.length; i++) {
             const gameCard = gameCards[i]
             gameCard.addEventListener('click', (event) => {
                 event.target.src = setOfCards[i]
+
                 if (!clickedCards[0]) {
                     clickedCards[0] = setOfCards[i]
                 } else {
@@ -106,15 +138,40 @@ const GamePageRender = (numberOfPairs) => {
                         matchCounter++
 
                         if (matchCounter === setOfCards.length / 2) {
-                            alert('You win')
+                            // alert('Вы выиграли')
+                            body.innerHTML = `
+                                <div class="container">
+                                    <div class="container-content">
+                                        <img src="./static/images/celebration.png">
+                                        <h1 class="container-title">Вы выиграли!</h1>
+                                            <div class="time-spent">
+                                                <h3>Затраченное время:</h3>
+                                                <h2 class="time-spent-timer">01.20</h2>
+                                            </div>
+                                        <button class="restart-button">Начать заново</button>
+                                    </div>
+                                </div>`
                         }
                     } else {
-                        alert('You lose')
+                        // alert('Вы проиграли')
+                        body.innerHTML = `
+                                <div class="container">
+                                    <div class="container-content">
+                                        <img src="./static/images/dead.png">
+                                        <h1 class="container-title">Вы проиграли!</h1>
+                                            <div class="time-spent">
+                                                <h3>Затраченное время:</h3>
+                                                <h2 class="time-spent-timer">01.20</h2>
+                                            </div>
+                                        <button class="restart-button">Начать заново</button>
+                                    </div>
+                                </div>`
                     }
                     clickedCards = []
                 }
             })
         }
     }
+
     compareGameCards(gameCards, setOfCards)
 }
