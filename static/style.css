@@ -1,4 +1,8 @@
-@import url('/src/fonts.css');
+@font-face {
+    font-family: StratosSkyeng;
+    src: url('../static/fonts/Desktop\ fonts/StratosSkyeng-regular.otf')
+        format('opentype');
+}
 
 body {
     margin: 0;
@@ -137,4 +141,8 @@ input {
     width: 95px;
     height: 133px;
     border-radius: 4px;
+}
+
+.time-spent {
+    text-align: center;
 }
