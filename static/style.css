@@ -7,7 +7,7 @@
 body {
     margin: 0;
     background-color: #004980;
-    font-family: StratosSkyeng;
+    font-family: StratosSkyeng, sans-serif;
 }
 
 .container {
