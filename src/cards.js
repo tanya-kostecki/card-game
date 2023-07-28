@@ -22,7 +22,7 @@ export const compareGameCards = (gameCards, setOfCards) => {
                     if (matchCounter === setOfCards.length / 2) {
                         // alert('Вы выиграли')
                         body.innerHTML = `
-                            <div class="container">
+                            <div class="game-result-container">
                                 <div class="container-content">
                                     <img src="./static/images/celebration.png">
                                     <h1 class="container-title">Вы выиграли!</h1>
@@ -43,7 +43,7 @@ export const compareGameCards = (gameCards, setOfCards) => {
                 } else {
                     // alert('Вы проиграли')
                     body.innerHTML = `
-                            <div class="container">
+                            <div class="game-result-container">
                                 <div class="container-content">
                                     <img src="./static/images/dead.png">
                                     <h1 class="container-title">Вы проиграли!</h1>

@@ -30,6 +30,10 @@ export const GamePageRender = (numberOfPairs) => {
             <div class="game-space"></div>
         </div>`
 
+    document.querySelector('.restart-button').addEventListener('click', () => {
+        startPageRender()
+    })
+
     //Таймер
     timer()
 
