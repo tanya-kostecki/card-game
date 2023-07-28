@@ -20,14 +20,12 @@ export const compareGameCards = (gameCards, setOfCards) => {
                     matchCounter++
 
                     if (matchCounter === setOfCards.length / 2) {
-                        // alert('Вы выиграли')
                         body.innerHTML = `
                             <div class="game-result-container">
-                                <div class="container-content">
+                                <div class="result-content">
                                     <img src="./static/images/celebration.png">
-                                    <h1 class="container-title">Вы выиграли!</h1>
-                                        <div class="time-spent">
-                                            <h3>Затраченное время:</h3>
+                                    <h1 class="result-title">Вы выиграли!</h1>
+                                        <div class="time-spent">Затраченное время:
                                             <h2 class="time-spent-timer">${gameTimeHandler()}</h2>
                                         </div>
                                     <button class="restart-button">Начать заново</button>
@@ -41,14 +39,12 @@ export const compareGameCards = (gameCards, setOfCards) => {
                             })
                     }
                 } else {
-                    // alert('Вы проиграли')
                     body.innerHTML = `
                             <div class="game-result-container">
-                                <div class="container-content">
+                                <div class="result-content">
                                     <img src="./static/images/dead.png">
-                                    <h1 class="container-title">Вы проиграли!</h1>
-                                        <div class="time-spent">
-                                            <h3>Затраченное время:</h3>
+                                    <h1 class="result-title">Вы проиграли!</h1>
+                                        <div class="time-spent">Затраченное время:
                                             <h2 class="time-spent-timer">${gameTimeHandler()}</h2>
                                         </div>
                                     <button class="restart-button">Начать заново</button>
