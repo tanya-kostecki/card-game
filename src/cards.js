@@ -20,7 +20,7 @@ export const compareGameCards = (gameCards, setOfCards) => {
                     matchCounter++
 
                     if (matchCounter === setOfCards.length / 2) {
-                        body.innerHTML = `
+                        body.innerHTML += `
                             <div class="game-result-container">
                                 <div class="result-content">
                                     <img src="./static/images/celebration.png">
@@ -28,18 +28,18 @@ export const compareGameCards = (gameCards, setOfCards) => {
                                         <div class="time-spent">Затраченное время:
                                             <h2 class="time-spent-timer">${gameTimeHandler()}</h2>
                                         </div>
-                                    <button class="restart-button">Начать заново</button>
+                                    <button class="result-button">Начать заново</button>
                                 </div>
                             </div>`
 
                         document
-                            .querySelector('.restart-button')
+                            .querySelector('.result-button')
                             .addEventListener('click', () => {
                                 startPageRender()
                             })
                     }
                 } else {
-                    body.innerHTML = `
+                    body.innerHTML += `
                             <div class="game-result-container">
                                 <div class="result-content">
                                     <img src="./static/images/dead.png">
@@ -47,12 +47,12 @@ export const compareGameCards = (gameCards, setOfCards) => {
                                         <div class="time-spent">Затраченное время:
                                             <h2 class="time-spent-timer">${gameTimeHandler()}</h2>
                                         </div>
-                                    <button class="restart-button">Начать заново</button>
+                                    <button class="result-button">Начать заново</button>
                                 </div>
                             </div>`
 
                     document
-                        .querySelector('.restart-button')
+                        .querySelector('.result-button')
                         .addEventListener('click', () => {
                             startPageRender()
                         })
