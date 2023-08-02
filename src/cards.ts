@@ -1,15 +1,19 @@
-import { startPageRender } from './render.js'
-import { gameTimeHandler } from './timer.js'
+import { startPageRender } from './start-page-render.ts'
+import { gameTimeHandler } from './timer.ts'
 
-export const compareGameCards = (gameCards, setOfCards) => {
-    let clickedCards = []
+export const compareGameCards = (
+    gameCards: NodeList,
+    setOfCards: Array<string>,
+) => {
+    let clickedCards: Array<string> = []
     let matchCounter = 0
     const body = document.querySelector('body')
 
     for (let i = 0; i < gameCards.length; i++) {
         const gameCard = gameCards[i]
         gameCard.addEventListener('click', (event) => {
-            event.target.src = setOfCards[i]
+            const target = event.target as HTMLImageElement
+            target.src = setOfCards[i]
 
             if (!clickedCards[0]) {
                 clickedCards[0] = setOfCards[i]
@@ -20,7 +24,8 @@ export const compareGameCards = (gameCards, setOfCards) => {
                     matchCounter++
 
                     if (matchCounter === setOfCards.length / 2) {
-                        body.innerHTML += `
+                        if (body) {
+                            body.innerHTML += `
                             <div class="game-result-container">
                                 <div class="result-content">
                                     <img src="./static/images/celebration.png">
@@ -32,14 +37,16 @@ export const compareGameCards = (gameCards, setOfCards) => {
                                 </div>
                             </div>`
 
-                        document
-                            .querySelector('.result-button')
-                            .addEventListener('click', () => {
-                                startPageRender()
-                            })
+                            document
+                                .querySelector('.result-button')
+                                ?.addEventListener('click', () => {
+                                    startPageRender()
+                                })
+                        }
                     }
                 } else {
-                    body.innerHTML += `
+                    if (body) {
+                        body.innerHTML += `
                             <div class="game-result-container">
                                 <div class="result-content">
                                     <img src="./static/images/dead.png">
@@ -51,11 +58,12 @@ export const compareGameCards = (gameCards, setOfCards) => {
                                 </div>
                             </div>`
 
-                    document
-                        .querySelector('.result-button')
-                        .addEventListener('click', () => {
-                            startPageRender()
-                        })
+                        document
+                            .querySelector('.result-button')
+                            ?.addEventListener('click', () => {
+                                startPageRender()
+                            })
+                    }
                 }
                 clickedCards = []
             }

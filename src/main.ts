@@ -1,16 +1,18 @@
-import { compareGameCards } from './cards.js'
-import { startPageRender } from './render.js'
-import { timer } from './timer.js'
+import { compareGameCards } from './cards.ts'
+import { startPageRender } from './start-page-render.ts'
+import { timer } from './timer.ts'
 
 startPageRender()
 
-const cardSuits = ['Diamonds', 'Clubs', 'Spades', 'Hearts']
-const cardRanks = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
+const cardSuits: string[] = ['Diamonds', 'Clubs', 'Spades', 'Hearts']
+const cardRanks: string[] = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
 
 const body = document.querySelector('body')
 
-export const GamePageRender = (numberOfPairs) => {
-    body.innerHTML = `
+
+export const GamePageRender = (numberOfPairs: number) => {
+    if (body) {
+        body.innerHTML = `
         <div class="game-page-container">
             <div class="timer">
                 <div class="time">
@@ -30,21 +32,24 @@ export const GamePageRender = (numberOfPairs) => {
             <div class="game-space"></div>
         </div>`
 
-    document.querySelector('.restart-button').addEventListener('click', () => {
-        startPageRender()
-    })
+        document
+            .querySelector('.restart-button')
+            ?.addEventListener('click', () => {
+                startPageRender()
+            })
+    }
 
     //Таймер
     timer()
 
-    let setOfCards = []
+    let setOfCards: string[] = []
 
     const gameSpace = document.querySelector('.game-space')
     for (let i = 0; i < numberOfPairs; i++) {
         const randomCardSuits = Math.floor(Math.random() * cardSuits.length)
         const randomCardRanks = Math.floor(Math.random() * cardRanks.length)
 
-        let cardElement =
+        let cardElement: string =
             '../static/images/' +
             cardRanks[randomCardRanks] +
             cardSuits[randomCardSuits] +
@@ -57,14 +62,16 @@ export const GamePageRender = (numberOfPairs) => {
     for (let j = 0; j < shuffledSetOfCards.length; j++) {
         const cardElem = document.createElement('img')
         cardElem.src = setOfCards[j]
-        gameSpace.appendChild(cardElem)
+        gameSpace?.appendChild(cardElem)
         cardElem.classList.add('game-card')
     }
 
     const gameCards = document.querySelectorAll('.game-card')
     const hideGameCards = () => {
         for (const gameCard of gameCards) {
-            gameCard.src = '../static/images/background.jpg'
+            if (gameCard instanceof HTMLImageElement) {
+                gameCard.src = '../static/images/background.jpg'
+            }
         }
     }
     setTimeout(hideGameCards, 5000)

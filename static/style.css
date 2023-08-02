@@ -119,14 +119,12 @@ input {
     color: white;
 }
 
-/* Game page 2 & 3 */
 .game-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 
 .game-space {
     display: flex;

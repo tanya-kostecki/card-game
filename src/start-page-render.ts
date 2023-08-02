@@ -1,7 +1,9 @@
-import { GamePageRender } from './main.js'
+import { Input } from 'css-minimizer-webpack-plugin'
+import { GamePageRender } from './main.ts'
 export const startPageRender = () => {
     const body = document.querySelector('body')
-    body.innerHTML = `
+    if (body) {
+        body.innerHTML = `
         <div class="container">
             <div class="container-content">
                 <h1 class="container-title">Выбери сложность</h1>
@@ -16,19 +18,22 @@ export const startPageRender = () => {
                 <button class="start-button">Старт</button>
             </div> 
         </div>`
+    }
 
     const startButton = document.querySelector('.start-button')
     const containerLevels = document.querySelectorAll('.container-level')
 
-    let selectedLevel
+    let selectedLevel: string
 
-    startButton.addEventListener('click', () => {
-        let isChecked = false
-        let numberOfPairs
+    startButton?.addEventListener('click', () => {
+        let isChecked: boolean = false
+        let numberOfPairs: number
         for (const containerLevel of containerLevels) {
-            if (containerLevel.checked === true) {
-                isChecked = true
-                selectedLevel = containerLevel.value
+            if (containerLevel instanceof HTMLInputElement) {
+                if (containerLevel.checked === true) {
+                    isChecked = true
+                    selectedLevel = containerLevel.value
+                }
             }
         }
         if (!isChecked) {
