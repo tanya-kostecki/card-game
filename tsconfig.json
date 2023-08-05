@@ -7,8 +7,6 @@
       "target": "es6",
       "allowJs": true,
       "moduleResolution": "node",
-      "noEmit": true,
-      "allowImportingTsExtensions":true,
       "sourceMap": true
     }
   }

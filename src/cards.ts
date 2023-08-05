@@ -1,5 +1,5 @@
-import { startPageRender } from './start-page-render.ts'
-import { gameTimeHandler } from './timer.ts'
+import { startPageRender } from './start-page-render'
+import { gameTimeHandler } from './timer'
 
 export const compareGameCards = (
     gameCards: NodeList,

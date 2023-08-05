@@ -1,6 +1,6 @@
-import { compareGameCards } from './cards.ts'
-import { startPageRender } from './start-page-render.ts'
-import { timer } from './timer.ts'
+import { compareGameCards } from './cards'
+import { startPageRender } from './start-page-render'
+import { timer } from './timer'
 
 startPageRender()
 
@@ -77,3 +77,4 @@ export const GamePageRender = (numberOfPairs: number) => {
     setTimeout(hideGameCards, 5000)
     compareGameCards(gameCards, setOfCards)
 }
+

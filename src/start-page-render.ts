@@ -1,5 +1,4 @@
-import { Input } from 'css-minimizer-webpack-plugin'
-import { GamePageRender } from './main.ts'
+import { GamePageRender } from './main'
 export const startPageRender = () => {
     const body = document.querySelector('body')
     if (body) {
@@ -27,7 +26,7 @@ export const startPageRender = () => {
 
     startButton?.addEventListener('click', () => {
         let isChecked: boolean = false
-        let numberOfPairs: number
+        let numberOfPairs: any = null
         for (const containerLevel of containerLevels) {
             if (containerLevel instanceof HTMLInputElement) {
                 if (containerLevel.checked === true) {
@@ -54,3 +53,4 @@ export const startPageRender = () => {
         GamePageRender(numberOfPairs)
     })
 }
+
