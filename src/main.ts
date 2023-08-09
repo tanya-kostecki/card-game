@@ -1,6 +1,7 @@
 import { compareGameCards } from './cards'
 import { startPageRender } from './start-page-render'
 import { timer } from './timer'
+import './style.css'
 
 startPageRender()
 
