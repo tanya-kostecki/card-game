@@ -1,6 +1,7 @@
 import { compareGameCards } from './cards'
 import { startPageRender } from './start-page-render'
 import { timer } from './timer'
+import { randomizeIndex, shuffle } from './helpers'
 import './style.css'
 
 startPageRender()
@@ -9,7 +10,6 @@ const cardSuits: string[] = ['Diamonds', 'Clubs', 'Spades', 'Hearts']
 const cardRanks: string[] = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']
 
 const body = document.querySelector('body')
-
 
 export const GamePageRender = (numberOfPairs: number) => {
     if (body) {
@@ -40,27 +40,27 @@ export const GamePageRender = (numberOfPairs: number) => {
             })
     }
 
-    //Таймер
     timer()
 
     let setOfCards: string[] = []
-
-    const gameSpace = document.querySelector('.game-space')
+ 
     for (let i = 0; i < numberOfPairs; i++) {
-        const randomCardSuits = Math.floor(Math.random() * cardSuits.length)
-        const randomCardRanks = Math.floor(Math.random() * cardRanks.length)
+        let randomCardSuits = randomizeIndex(0, cardSuits.length)//test
+        let randomCardRanks = randomizeIndex(0, cardRanks.length)//test
 
         let cardElement: string =
             '../static/images/' +
-            cardRanks[randomCardRanks] +
-            cardSuits[randomCardSuits] +
+            cardRanks[randomCardRanks!] +
+            cardSuits[randomCardSuits!] +
             '.jpg'
 
         setOfCards.push(cardElement, cardElement)
     }
 
-    const shuffledSetOfCards = setOfCards.sort(() => Math.random() - 0.5)
-    for (let j = 0; j < shuffledSetOfCards.length; j++) {
+    shuffle(setOfCards)//test
+
+    const gameSpace = document.querySelector('.game-space')
+    for (let j = 0; j < setOfCards.length; j++) {
         const cardElem = document.createElement('img')
         cardElem.src = setOfCards[j]
         gameSpace?.appendChild(cardElem)
@@ -75,6 +75,7 @@ export const GamePageRender = (numberOfPairs: number) => {
             }
         }
     }
+
     setTimeout(hideGameCards, 5000)
     compareGameCards(gameCards, setOfCards)
 }

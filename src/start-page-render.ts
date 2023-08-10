@@ -5,7 +5,7 @@ export const startPageRender = () => {
         body.innerHTML = `
         <div class="container">
             <div class="container-content">
-                <h1 class="container-title">Выбери сложность</h1>
+                <h1 class="container-title">Выбери<br>сложность</h1>
                 <div class="container-levels">
                     <input type="radio" id="basic" class="container-level" name="levels" value="1"></input>
                     <label class="radio-label" for="basic">1</label>
