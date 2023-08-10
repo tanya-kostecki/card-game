@@ -11,7 +11,7 @@
         "build": "NODE_ENV=production webpack",
         "start": "webpack-dev-server --open",
         "lint:ts": "tsc --noEmit",
-        "lint": "npm run lint:ts",
+        "lint": "npm run lint:ts && npm run lint:css",
         "prepare": "husky install"
     },
     "repository": {
@@ -35,7 +35,8 @@
         "husky": "^8.0.3",
         "mini-css-extract-plugin": "^2.7.6",
         "prettier": "^3.0.0",
-        "stylelint": "^14.16.1",
+        "stylelint": "^15.10.1",
+        "stylelint-config": "^0.1.1",
         "stylelint-config-prettier": "^9.0.5",
         "stylelint-config-standard": "^34.0.0",
         "stylelint-prettier": "^4.0.0",
