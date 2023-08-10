@@ -45,13 +45,13 @@ export const GamePageRender = (numberOfPairs: number) => {
     let setOfCards: string[] = []
  
     for (let i = 0; i < numberOfPairs; i++) {
-        let randomCardSuits = randomizeIndex(0, cardSuits.length)//test
-        let randomCardRanks = randomizeIndex(0, cardRanks.length)//test
+        let randomCardSuit = randomizeIndex(0, cardSuits.length)//test
+        let randomCardRank = randomizeIndex(0, cardRanks.length)//test
 
         let cardElement: string =
             '../static/images/' +
-            cardRanks[randomCardRanks!] +
-            cardSuits[randomCardSuits!] +
+            cardRanks[randomCardRank] +
+            cardSuits[randomCardSuit] +
             '.jpg'
 
         setOfCards.push(cardElement, cardElement)
