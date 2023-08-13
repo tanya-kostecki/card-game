@@ -50,8 +50,8 @@ export const GamePageRender = (numberOfPairs: number) => {
 
         let cardElement: string =
             '../static/images/' +
-            cardRanks[randomCardRank] +
-            cardSuits[randomCardSuit] +
+            cardRanks[randomCardRank!] +
+            cardSuits[randomCardSuit!] +
             '.jpg'
 
         setOfCards.push(cardElement, cardElement)

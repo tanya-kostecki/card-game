@@ -1,11 +1,24 @@
 export const randomizeIndex = (minIndex: number, maxIndex: number) => {
-    const index = Math.floor(Math.random()* (maxIndex - minIndex))
-    return index
+    if (minIndex < 0) {
+        return
+    } else {
+        const index: number = Math.floor(Math.random()* (maxIndex - minIndex))
+        return index
+    }
 }
 
+//алгоритм тасования Фишера — Йетса
 export const shuffle = (array: string[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+    let j: number = array.length, t: string, i: number
+    while (j) {
+      i = Math.floor(Math.random() * j--)
+      t = array[j]
+      array[j] = array[i]
+      array[i] = t
+    }
+    return array
 }
+
+export default randomizeIndex; shuffle
+
+// module.exports = { randomizeIndex, shuffle }
